@@ -2,11 +2,22 @@ import random
 import string
 import csv
 
-def randomString(stringLength):
-    """Generate a random string with the combination of lowercase and uppercase letters """
+def randomPassword():
+    """Generate a random password """
+    randomSource = string.ascii_letters + string.digits + string.punctuation
+    password = random.choice(string.ascii_lowercase)
+    password += random.choice(string.ascii_uppercase)
+    password += random.choice(string.digits)
+    password += random.choice(string.punctuation)
 
-    letters = string.ascii_letters
-    return ''.join(random.choice(letters) for i in range(stringLength))
+    for i in range(6):
+        password += random.choice(randomSource)
+
+    passwordList = list(password)
+    random.SystemRandom().shuffle(passwordList)
+    password = ''.join(passwordList)
+    return password
+
 
 data=[]
 
@@ -48,7 +59,7 @@ while True:
             if nama == "CUKUP" :
                 print("\n\n================== Input selesai =================")
             else:
-                password = randomString(11)
+                password = randomPassword()
                 data.append((nama,password))
         print("========= pilih 5 pada menu untuk simpan dan keluar ========")
 
