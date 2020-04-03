@@ -1,7 +1,7 @@
 # random password generator
 Random Password Generator Using Python3
 
-- This litle script able to generate random password for any username.
+- This litle script ables to generate random password for any username.
 - run python3 `python_generate_password.py` Input the username, the password will be generated
 ```
 references :
