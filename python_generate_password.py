@@ -21,11 +21,12 @@ def randomPassword():
 data=[]
 try:
     with open('data.csv', 'r') as f:
-    reader = csv.reader(f)
-    for daftar in reader:
-        print("\n",no,daftar)
-        no += 1
-        data.append(daftar)
+        no = 0
+        reader = csv.reader(f)
+        for daftar in reader:
+            print("\n",no,daftar)
+            no += 1
+            data.append(daftar)
 
 except FileNotFoundError:
     print("\nBELUM ADA DATA")
