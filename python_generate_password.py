@@ -10,7 +10,7 @@ def randomPassword():
     password += random.choice(string.digits)
     password += random.choice(string.punctuation)
 
-    for i in range(6):
+    for i in range(12):
         password += random.choice(randomSource)
 
     passwordList = list(password)
@@ -18,8 +18,17 @@ def randomPassword():
     password = ''.join(passwordList)
     return password
 
-
 data=[]
+try:
+    with open('data.csv', 'r') as f:
+    reader = csv.reader(f)
+    for daftar in reader:
+        print("\n",no,daftar)
+        no += 1
+        data.append(daftar)
+
+except FileNotFoundError:
+    print("\nBELUM ADA DATA")
 
 while True:
 
